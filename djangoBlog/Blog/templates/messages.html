@@ -1,0 +1,15 @@
+{% for message in messages %}
+
+    <div class="mt-2">
+        <div class="alerts {{ message.tags }} col-lg-offset-4 alert-dismissable text-center" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="d-flex w-100 flex-column">
+                <p class="align-self-center justify-content-center w-100 mb-0">{{ message }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+

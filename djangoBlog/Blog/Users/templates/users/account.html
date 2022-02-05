@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="container d-flex justify-items-center flex-column mb-5" id="accountPage">
+    <div class="d-flex pt-5">
+        <div class="blogPostDiv"></div>
+        <div class="d-flex justify-content-between blogPostHeader">
+            <h2> Your blog posts </h2>
+            <a href="{% url 'logout' %}" class="d-flex logout"><p class="mb-0 text-danger">Do you want log out?</p></a>
+        </div>
+
+    </div>
+
+    <div class="articleCards justify-items-center">
+
+        <div class="articles">
+            <a href="{% url 'add_new_post' %}">
+                <div class="card add-post-card p-5 pb-5">
+                    <div class="image d-flex justify-content-center h-25">
+                      <span>&#43;</span>
+                    </div>
+                    <div class="card-inner h-25">
+                      <div class="header">
+                        <h2 class="text-center">Add new post</h2>
+                      </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {% for article in articles %}
+
+            <div class="articles position-relative">
+            {% if article.owner.id == request.user.id %}
+
+                <div class="d-flex ml-5 editButton justify-self-start position-absolute">
+                    <a href="{% url 'article-edit-page' article.id%}">
+                        <button> Edit </button>
+                    </a>
+                </div>
+
+            {% endif %}
+              <div class="card h-100 pb-5">
+
+                  <div class="bg-image hover-overlay ripple h-50" data-mdb-ripple-color="light">
+                        <a href="{% url 'article-page' article.id %}" class="d-block image">
+                            {% if article.main_pic %}
+                              <img src="{{ article.main_pic.url }}" class="img-fluid imageLandingPage"/>
+                            {% else %}
+                               <img src="http://loremflickr.com/320/150?random=5" class="img-fluid imageLandingPage"/>
+                            {% endif %}
+                        </a>
+                    </div>
+
+                    <div class="card-inner h-50">
+                        <div class="header">
+                            <a href="{% url 'article-page' article.id %}" class="d-block image">
+                                <div class="d-flex justify-content-between articleTitle w-100">
+                                    <h2 class="text-center pt-2 contentHeader w-100">{{ article.title|truncatechars:20  }}</h2>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="{% url 'article-page' article.id %}" class="d-block image">
+                            <div class="content">
+                              <p class="text-center pt-2">{{ article.content|truncatechars:100 }}</p>
+                            </div>
+                        </a>
+                    </div>
+
+                  </a>
+              </div>
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+
+{% endblock %}

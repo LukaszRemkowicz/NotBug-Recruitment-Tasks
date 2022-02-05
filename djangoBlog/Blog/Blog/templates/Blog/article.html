@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <!-- Page content-->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Post content-->
+                <article>
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <div class="d-flex m-0 justify-content-between">
+                           <h1 class="fw-bolder articleTitle">{{ article.title }}</h1>
+
+                            {% if article.owner.id == request.user.id %}
+                                <div class="d-flex ml-5 editButton">
+                                    <a href="{% url 'article-edit-page' article.id%}">
+                                        <button> Edit </button>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">{{ article.when_posted }}</div>
+                        <!-- Post categories-->
+                        {% for tag in article.return_tags %}
+                            <a class="badge bg-red text-decoration-none link-light font-white" href="#!">{{tag}}</a>
+                        {% endfor %}
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4">
+                            {% if article.main_pic %}
+                                <img class="img-fluid rounded" src="{{ article.main_pic.url }}" alt="..."/>
+                            {% else %}
+                               <img src="http://loremflickr.com/320/150?random=5" class="w-100 img-fluid rounded"/>
+                            {% endif %}
+                    </figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <p class="fs-5 mb-4" style="text-justify: auto">{{ article.content }}</p>
+
+                        {% if article.second_header %}
+                           <h2 class="fw-bolder mb-4 mt-5">{{ article.second_header }}</h2>
+                           <p class="fs-5 mb-4">{{ article.second_paragraph }}</p>
+                        {% endif %}
+
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

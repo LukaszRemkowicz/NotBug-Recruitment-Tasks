@@ -1,0 +1,65 @@
+{% load widget_tweaks %}
+
+<div class="form-group">
+    <label for="title">Title <span class="require">*</span></label>
+    {% render_field form.title type="text" class="form-control" name="title"  %}
+</div>
+
+
+<div class="form-group">
+    <label for="description">Content<span class="require">*</span></label>
+    {% render_field form.content rows="5" class="form-control" name="description" %}
+</div>
+
+<div class="form-group">
+    <label for="title">Author <span class="require">*</span></label>
+    {% render_field form.author type="text" class="form-control" name="title" %}
+</div>
+<div class="form-group">
+    <label for="title">Second Header</label>
+    {% render_field form.second_header type="text" class="form-control" name="title" %}
+</div>
+<div class="form-group">
+    <label for="title">Second Paragraph</label>
+    {% render_field form.second_paragraph type="text" class="form-control" name="title" %}
+</div>
+<div class="form-group d-flex">
+    <div class="form-group m-2">
+        <label for="title">First tag</label>
+        {% render_field form.tag_one type="text" class="form-control" name="title" %}
+    </div>
+    <div class="form-group m-2">
+        <label for="title">Second tag</label>
+        {% render_field form.tag_two type="text" class="form-control" name="title" %}
+    </div>
+    <div class="form-group m-2">
+        <label for="title">Third tag</label>
+        {% render_field form.tag_three type="text" class="form-control" name="title" %}
+    </div>
+</div>
+
+
+<div class="form-group">
+    <label for="picture">picture</label>
+    {% render_field form.main_pic rows="5" class="form-control inputImg" name="picture" type="file" %}
+</div>
+<div class="d-flex justify-content-between">
+    {% if article.main_pic %}
+        <div class="previewPic">
+            <p>Current photo</p>
+            <img class="imgEdit" src="{{ article.main_pic.url }}" alt="">
+        </div>
+    {% endif %}
+    <div class="previewPic">
+        <p>Preview</p>
+        {% if article.main_pic %}
+            <img class="imgEdit previewImg" src="{{ article.main_pic.url }}" alt="">
+        {% endif %}
+    </div>
+
+</div>
+
+
+<div class="form-group">
+    <p><span class="require">*</span> - required fields</p>
+</div>

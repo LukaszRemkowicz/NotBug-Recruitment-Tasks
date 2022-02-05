@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+	    <div class="col-md-8 col-md-offset-2">
+            {% include 'messages.html' %}
+
+
+    		<h1>Edit post</h1>
+
+    		<form action="{% url 'article-edit-page' article.id %}" method="POST" enctype='multipart/form-data'>
+				{% csrf_token %}
+
+                {% include 'Blog/partials/article_form.html' %}
+
+    		    <div class="form-group">
+
+                    <button class="btn btn-primary">
+                        Update
+                    </button>
+
+                    <a href="{% url 'account' %}" class="d-inline-block cancelBtn">
+                        Cancel
+                    </a>
+
+    		    </div>
+
+    		</form>
+		</div>
+
+	</div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/create_post.css' %}">
+
+{% endblock %}
