@@ -25,3 +25,9 @@ print(sum(numbers[5:15]))
 """
 
 result = [num**2 for num in range(1, 21)]
+
+
+import requests
+
+a = requests.get('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200')
+print(a.__dict__)
