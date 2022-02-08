@@ -1,52 +1,8 @@
-<!--<div class="d-flex flex-column carSection">-->
-<!--  <div class="p-1 d-flex flex-column">-->
-<!--    <label for="carInput">Car:</label>-->
-<!--    <input class="w-30"-->
-<!--           type="text"-->
-<!--           placeholder="Write here a car.."-->
-<!--           #carNameInput-->
-<!--           [value]="partialName"-->
-<!--           (input)="carInput(carNameInput.value)"-->
-<!--    >-->
-<!--  </div>-->
-<!--  <div class="p-1 d-flex flex-column">-->
-<!--    <label for="partInput">Part:</label>-->
-<!--    <input-->
-<!--      class="w-30"-->
-<!--      type="text"-->
-<!--      placeholder="Part name.."-->
-<!--      #partialNameInput-->
-<!--      [value]="partialName"-->
-<!--      (input)="partialInput(partialNameInput.value)"-->
-<!--    >-->
-<!--  </div>-->
-<!--  <div class="p-1 d-flex flex-column">-->
-<!--    <label for="partCost">Cost of this part:</label>-->
-<!--    <input-->
-<!--      class="w-30"-->
-<!--      type="text"-->
-<!--      placeholder="Cost of part.."-->
-<!--      #partCost-->
-<!--      [value]="partialCost"-->
-<!--      (input)="partialCostInput(+partCost.value)"-->
-<!--    >-->
-<!--  </div>-->
-<!--  <button class="m-1 w-30 px-0_3" (click)="addCar()">-->
-<!--    Submit-->
-<!--  </button>-->
-<!--</div>-->
-<!--<button class="checkCars w-30 px-0_3" (click)="printCars()">-->
-<!--  Check your cars-->
-<!--</button>-->
-
-
 <br><br>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<!-- multistep form -->
 <div id="msform" class="mb-5">
 
-  <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">Create your car</h2>
     <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
@@ -90,24 +46,6 @@
 </div>
 
 <div class="section_our_solution" [hidden]="isShow">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <div class="our_solution_category">
-        <div  class="solution_cards_box" >
-          <div class="solution_card" *ngFor="let car of carsData">
-            <div class="hover_color_bubble"></div>
-            <div class="solu_title">
-              <h3>{{car['car']}}</h3>
-            </div>
-            <div class="solu_description">
-              <h6>Partials</h6>
-                <div *ngFor="let partial of car['partials']">
-                  <span>{{partial['name']}} - {{ partial['price'] }}$</span>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
+  <app-cars [carsData]="carsData"></app-cars>
 </div>
 
