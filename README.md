@@ -44,4 +44,4 @@ App wrote in Flask. This is just API with REST API convencion. To test it use fo
 ## How apps looks like?
 
 
-![alt text](https://github.com/LukaszRemkowicz/NotBug-Recruitment-Tasks/pokemonApp.jpg)
+![alt text](https://github.com/LukaszRemkowicz/NotBug-Recruitment-Tasks/pokemonApp.jpg?raw=true)
