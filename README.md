@@ -1,17 +1,18 @@
 # NotABug requirements tasks
 
-Repository contains 3 project and one file with small exercises
+Repository contains 3 projects and one file with small exercises (exercise2_4.py)
 
 ## DjangoBlog
 
-This is a small blog application. Site contains only landing, register, login, account pages. To run it, create .env file and fill with required data (in settings.py). Data required:
+This is blog app. Site contains landing, register, login, account and article detail pages. In order to run the app, create on your project folder .env file, and fill with required data:
 
 * FLASK_APP=app.py
-* SECRET_KEY
-* DB_NAME
-* DB_USER
-* DB_PASSWORD
-* DB_HOST
+* SECRET_KEY=**YOUR_SECRET_KEY**
+* DB_NAME=**YOUR_DB_NAME**
+* DB_USER=**YOUR_DB_USER**
+* DB_PASSWORD=**YOUR_DB_PASS**
+* DB_HOST=**YOUR_DB_HOSTNAME**
+
 
 To run application use:
 ```
@@ -25,7 +26,7 @@ python manage.py runserver
 
 ## LocalStorageCars
 
-Application wrote in Angular. App allows user to "create" a car with partials for buy. Data are stored in LocalStorage. To run application use:
+Application was written in Angular. App allows user to "create" a car with partials for buy. Data are stored in LocalStorage. To run use:
 
 ```
 npm install
@@ -34,7 +35,7 @@ ng serve
 
 ## Pokemons
 
-Website wrote in Angular. Landing page shows cards with fetched pokemons from site: [PokemonApi](https://pokeapi.co). To run application use:
+Next Angular application. Landing page shows cards with fetched pokemons from site: [PokemonApi](https://pokeapi.co). To run application use:
 
 ```
 npm install
@@ -43,7 +44,7 @@ ng serve
 
 ## TodoApp
 
-App wrote in Flask. This is just API with REST API convencion. To test it use for example Postman.
+App wrote in Flask. This is API with REST convencion. 
 
 <br/>
 <br/>
