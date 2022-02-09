@@ -1,0 +1,35 @@
+<!--<p *ngFor="let pok of pokemonsData">-->
+
+<!--  {{pok | json}}-->
+
+<!--</p>-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="section_our_solution">
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="our_solution_category">
+      <div  class="solution_cards_box" >
+        <div class="solution_card" *ngFor="let pokemon of pokemonsData">
+          <div class="hover_color_bubble"></div>
+          <div class="solu_title">
+            <h3 class="pokName">{{pokemon['name']}}</h3>
+          </div>
+          <div class="solu_description d-flex flex-column">
+            <span>Base Experience: {{pokemon['baseExperience']}}</span>
+            <div class="d-flex">
+              <span class="p-2">Height: {{ pokemon['height']}}</span>
+              <span class="p-2">Weight: {{ pokemon['weight']}}</span>
+            </div>
+          </div>
+          <div class="d-flex"></div>
+            <img src="{{pokemon['img']}} " alt="">
+            <p class="imageParagraph pokName">type: {{pokemon['type']}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
