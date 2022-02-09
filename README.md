@@ -1,6 +1,6 @@
 # NotABug requirements tasks
 
-Repository contains 3 projects and one file with small exercises (exercise2_4.py)
+Repository contains 3 projects and one file with small exercises (exercise2_4.py). Notice that every command below have to be use in main project folder.
 
 ## DjangoBlog
 
@@ -16,6 +16,8 @@ This is blog app. Site contains landing, register, login, account and article de
 
 To run application use:
 ```
+virtualenv env
+.\env\Scripts\activate
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
@@ -44,7 +46,21 @@ ng serve
 
 ## TodoApp
 
-App wrote in Flask. This is API with REST convencion. 
+App written in Flask. This is API with REST convencion. Endpoints:
+
+* /task - create task, method: POST, 
+* /task?filters=**[args: all | completed | not_completed]**&page_size=**[int]**&current_page=**[int]** - all tasks, method GET, 
+* /task/**[id]** - update task, method PUT
+* /task/**[id]** - update, method PATCH
+* /task/**[id]** - get one task, method: GET
+* /task/**[id]** - delete task, method: DELETE
+
+To run app use:
+```
+virtualenv env
+.\env\Scripts\activate
+pip install -r requirements.txt
+```
 
 <br/>
 <br/>
