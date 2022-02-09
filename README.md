@@ -4,7 +4,8 @@ Repository contains 3 project and one file with small exercises
 
 ## DjangoBlog
 
-This is a small blog aplication. Site contains only landing, register, login, account pages. To run it, create .env file and fill with required data (in settings.py). Data required: 
+This is a small blog application. Site contains only landing, register, login, account pages. To run it, create .env file and fill with required data (in settings.py). Data required:
+
 * FLASK_APP=app.py
 * SECRET_KEY
 * DB_NAME
@@ -12,15 +13,18 @@ This is a small blog aplication. Site contains only landing, register, login, ac
 * DB_PASSWORD
 * DB_HOST
 
-To run application use 
+To run application use:
 ```
 pip install -r requirements.txt
 python manage.py runserver
 ```
 
+<br/>
+
 ## LocalStorageCars
 
-Application wrote in Angular. App allows user to "create" a car with partials for buy. Data are stored in LocalStorage. To run application use 
+Application wrote in Angular. App allows user to "create" a car with partials for buy. Data are stored in LocalStorage. To run application use:
+
 ```
 npm install
 ng serve
@@ -28,7 +32,8 @@ ng serve
 
 ## Pokemons
 
-Website wrote in Angular. Landing page shows cards with fetched pokemons from site: [PockemonApi](https://pokeapi.co). To run application use 
+Website wrote in Angular. Landing page shows cards with fetched pokemons from site: [PokemonApi](https://pokeapi.co). To run application use:
+
 ```
 npm install
 ng serve
@@ -45,3 +50,6 @@ App wrote in Flask. This is just API with REST API convencion. To test it use fo
 
 
 ![alt text](pokemonApp.jpg?raw=true)
+![alt text](blog.jpg?raw=true)
+![alt text](cars.jpg?raw=true)
+
