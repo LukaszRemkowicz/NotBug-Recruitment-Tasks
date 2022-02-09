@@ -16,6 +16,8 @@ This is a small blog application. Site contains only landing, register, login, a
 To run application use:
 ```
 pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver
 ```
 
